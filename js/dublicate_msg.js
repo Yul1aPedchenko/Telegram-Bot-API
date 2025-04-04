@@ -1,8 +1,8 @@
-function dublicateMsg(bot, msg) {
+function fn(bot, msg) {
   const chatId = msg.chat.id;
 
-  if (!msg.text.startsWith("/")) {
+  if (msg.text && !msg.text.startsWith("/") && msg.text.trim() !== "") {
     bot.sendMessage(chatId, `Ти написав: ${msg.text}`);
   }
 }
-module.exports = { dublicateMsg };
+module.exports = { fn };
